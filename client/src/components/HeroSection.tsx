@@ -35,10 +35,12 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-white gap-2">
-              Comenzar tu sanación
-              <ArrowRight className="w-4 h-4" />
-            </Button>
+            <a href="/agendar">
+              <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-white gap-2">
+                Comenzar tu sanación
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </a>
             <Button size="lg" variant="outline" className="rounded-full">
               Conocer más
             </Button>

@@ -41,9 +41,11 @@ export default function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-4">
-          <Button variant="outline" className="rounded-full">
-            Agendar Cita
-          </Button>
+          <a href="/agendar">
+            <Button variant="outline" className="rounded-full">
+              Agendar Cita
+            </Button>
+          </a>
           <Button className="rounded-full bg-primary hover:bg-primary/90">
             Acceder
           </Button>
@@ -73,9 +75,11 @@ export default function Header() {
               </a>
             ))}
             <div className="flex flex-col gap-2 pt-2">
-              <Button variant="outline" className="w-full rounded-full">
-                Agendar Cita
-              </Button>
+              <a href="/agendar" className="w-full" onClick={() => setIsOpen(false)}>
+                <Button variant="outline" className="w-full rounded-full">
+                  Agendar Cita
+                </Button>
+              </a>
               <Button className="w-full rounded-full bg-primary hover:bg-primary/90">
                 Acceder
               </Button>
