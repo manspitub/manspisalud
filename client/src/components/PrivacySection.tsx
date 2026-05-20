@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Lock, Eye, Database, Shield, Zap, CheckCircle2 } from "lucide-react";
+import DataProtectionModal from "./DataProtectionModal";
 
 const securityFeatures = [
   {
@@ -34,7 +36,17 @@ const securityFeatures = [
   },
 ];
 
+const guarantees = [
+  "Tu información médica nunca será vendida ni compartida con terceros sin tu consentimiento",
+  "Todos los datos están encriptados en tránsito y en reposo",
+  "Puedes acceder, modificar o eliminar tus datos en cualquier momento",
+  "Realizamos auditorías de seguridad independientes cada trimestre",
+  "Cumplimos con HIPAA, GDPR y todas las regulaciones de privacidad de datos",
+];
+
 export default function PrivacySection() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <section id="privacidad" className="relative py-20 md:py-32 overflow-hidden">
       {/* Background with Shield Image */}
@@ -50,7 +62,10 @@ export default function PrivacySection() {
       <div className="relative z-10 container">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 border border-primary/40 mx-auto mb-4">
+          <div
+            onClick={() => setModalOpen(true)}
+            className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 border border-primary/40 mx-auto mb-4 cursor-pointer hover:bg-primary/30 hover:border-primary/60 transition-all duration-300"
+          >
             <Shield className="w-8 h-8 text-primary" />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
@@ -59,6 +74,12 @@ export default function PrivacySection() {
           <p className="text-lg text-foreground/60 leading-relaxed">
             En ManspiSalud, entendemos que tu información de salud es profundamente personal. Por eso, hemos implementado los más altos estándares de seguridad y privacidad para proteger tus datos sensibles.
           </p>
+          <button
+            onClick={() => setModalOpen(true)}
+            className="inline-block mt-4 text-primary hover:text-primary/80 font-semibold transition-colors"
+          >
+            Ver normativa completa de protección de datos →
+          </button>
         </div>
 
         {/* Security Features Grid */}
@@ -68,7 +89,8 @@ export default function PrivacySection() {
             return (
               <div
                 key={index}
-                className="group relative p-8 rounded-3xl border border-border/50 bg-white/50 backdrop-blur hover:bg-white/80 hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                onClick={() => setModalOpen(true)}
+                className="group relative p-8 rounded-3xl border border-border/50 bg-white/50 backdrop-blur hover:bg-white/80 hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
               >
                 {/* Icon */}
                 <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/20 group-hover:bg-primary/30 transition-colors">
@@ -78,6 +100,7 @@ export default function PrivacySection() {
                 {/* Content */}
                 <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
                 <p className="text-foreground/60 text-sm leading-relaxed">{feature.description}</p>
+                <p className="text-xs text-primary mt-3 font-semibold">Haz clic para más detalles →</p>
 
                 {/* Accent Line */}
                 <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300 rounded-full"></div>
@@ -103,19 +126,19 @@ export default function PrivacySection() {
         </div>
 
         {/* Guarantee Card */}
-        <div className="mt-12 relative p-8 md:p-12 rounded-3xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 overflow-hidden">
+        <div
+          onClick={() => setModalOpen(true)}
+          className="mt-12 relative p-8 md:p-12 rounded-3xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 overflow-hidden cursor-pointer hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+        >
           <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10"></div>
           <div className="relative z-10 space-y-4">
             <h3 className="text-2xl font-bold text-foreground">Nuestra Garantía de Privacidad</h3>
-            <ul className="space-y-3">
-              {[
-                "Tu información médica nunca será vendida ni compartida con terceros sin tu consentimiento",
-                "Todos los datos están encriptados en tránsito y en reposo",
-                "Puedes acceder, modificar o eliminar tus datos en cualquier momento",
-                "Realizamos auditorías de seguridad independientes cada trimestre",
-                "Cumplimos con HIPAA, GDPR y todas las regulaciones de privacidad de datos",
-              ].map((guarantee, idx) => (
-                <li key={idx} className="flex items-start gap-3">
+            <p className="text-sm text-primary hover:text-primary/80 transition-colors">
+              Haz clic para conocer la normativa completa de protección de datos y IA →
+            </p>
+            <ul className="space-y-3" onClick={(e) => e.stopPropagation()}>
+              {guarantees.map((guarantee, idx) => (
+                <li key={idx} className="flex items-start gap-3" onClick={(e) => e.stopPropagation()}>
                   <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                   <span className="text-foreground/70">{guarantee}</span>
                 </li>
@@ -124,6 +147,8 @@ export default function PrivacySection() {
           </div>
         </div>
       </div>
+
+      <DataProtectionModal open={modalOpen} onOpenChange={setModalOpen} />
     </section>
   );
 }
