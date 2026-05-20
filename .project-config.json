@@ -1,0 +1,35 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": null,
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663674915555/ZfFnXPfUHKEotgPTayuyyM",
+    "access_key_id": "ASIAZV3A2ECZEEZNNUIQ",
+    "secret_access_key": "dIo5qdQCxXzWVmxf/ancuXnwuoomjoS0qFy5prdw",
+    "session_token": "IQoJb3JpZ2luX2VjECEaCXVzLWVhc3QtMSJHMEUCIFqF+sYQWvG8A5xcpa5oK1Qqg2ThH2JX+wYmrY7KgrngAiEA3tJgjNt+Jl2FbqfWGo9ZeKnLQxp5IiAfkkewJ8/Axjoq/gMI6v//////////ARAEGgw2NjUzODYwOTg4NjYiDFXIBocfCJRB2CKxRSrSA/EiF1jT7Ge7boa8n74kP8PpzxC1x4/+i1u+vaVsu1uDDKLVQOTuX9V374o4N5J++uAeBq2IkjM8jaWpJOM+jEzWGJS0kbIw1vsZy3vK7ZOxei7XN625WybpycDjTObvjAUD241GIE/HjLOmronJtYnIVdrAsROtW/x2aucvXOFOWRhvYcygyI+V4vRjRjRZ2FCi7SobgETiXC9RGKMpMo6qKu4qgDgK1vAxBlTwJOxjLRM9nb70/5ArjCAsd6I0E+anhfcWtldC1M+y10f4Zxhz1XKienYrzDvcns2ceff0uTQ6MzhjY+Cr8fvUNde6sDDsPHoD0hPCUHjJP2vLx1DFVkgJt/1+T/UQ9zqRVhrllmoTfgdQ7aaqAW6n6lScfsPXgifC2JuhHGcr6xhHduGa4bKfPYkc3q1ItUwVwQAnVlPYlwjzl6Fmo9JeIf6xEwOG/7jlL+Vai6ExxHT4Ldj8hWsgm/J8Pd+vIerNLGgdvIBj0dPreETifLyuh7LShGG5VnK0o4fxNV+TR4xIUEECJ0QlKSRQHR9YJPFqsS9bZwm3nhQsUE9wp46Q1r1G1v2SSaxr+mTCMXuLSm2R/RiNHT0PJ7I5OBu+5mN5mHDC30swl+K10AY6nQE+O9e4MltU385seOa1vuhWtioxoDmeI60EIh5Cj/MbhtqZTAo+D5u5voQwuYJM8+rKk4G5PisGVcrWUUeC6mqq8CuFocYbdeCNN3/XsFL4x3Ir15/3EiT9vU5d9Rn4oUTSNjEy2y0BP03EUWTSvSxcmf47+snsn8600e4elfAnFdGRCyhr6fuW2f73sse+y1KAp8CUEIbrTTtDD+e2",
+    "expiration": "2026-05-20T20:30:15.000Z"
+  },
+  "name": "manspisalud",
+  "path": "/home/ubuntu/manspisalud",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "VBinX8QKGPid8PR8BvC5TY",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "cDv2S7VxMsDE7PfoZgtNTo",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Manuel Spinola",
+    "OWNER_OPEN_ID": "cup8ydyjzzn5xtgT9fvAvS",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "b7bfe64a-7757-4a14-a5f2-9daab2231e6d",
+    "VITE_APP_ID": "ZfFnXPfUHKEotgPTayuyyM",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "ManspiSalud - Hospital Digital",
+    "VITE_FRONTEND_FORGE_API_KEY": "C6LDFao2b3FL65ZA9Gy6gh",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
